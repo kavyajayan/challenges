@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<cstdio>
 #include<iostream>
 #include<cstring>
 #include<string>
@@ -9,14 +9,14 @@ string LongestWord(string sen){
   int count=0;
   int prev=1;
   int len=0;
-  for(int i=0; i<str.size(); i++){
-    if(isalpha(str[i])){
+  for(int i=0; i<sen.size(); i++){
+    if(isalpha(sen[i])){
       count++;
     }
-    if(str[i]==' '){
+    if(sen[i]==' '){
       if(count>len){
         len=count;
-        sen=str.substr(prev,count);
+        str=sen.substr(prev,count);
       }
       count=0;
       prev=i+1;
@@ -24,7 +24,7 @@ string LongestWord(string sen){
   }
   if(count>len){
     len=count;
-    sen=str.substr(prev,count);
+    str=sen.substr(prev,count);
   }
     return str;
 }
